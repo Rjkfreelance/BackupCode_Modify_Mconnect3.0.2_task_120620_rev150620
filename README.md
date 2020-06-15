@@ -9,11 +9,13 @@ Version นี้ ตรวจสอบการทำงาน packdata  ใน
 
 #### การทดสอบ คือทำงานได้ โดยไม่ Reset  
 เมื่อ Run firmware  task_CheckWiFiMqtt  start ,task_Packdata_continue start 
-แต่ มี flag ที่ write_addeeprom >= 32000  
+แต่ มี flag เป็น Global variable ที่ share ให้ Task เห็น 
+ใน กรณีที่  write_addeeprom >= 32000  
 xsdwrite = 1; เริ่มเขียน SDcard 
 ทำให้ Task_Packdata_continue Start , Task__CheckWiFiMqtt Stop  เริ่ม packdata และ เก็บใน array const char* xdataContinue[23];
 ทำงานจน จบการเขียน SDcard จน xsdwrite = 0;
-Task_Packdata_continue Stop , Task__CheckWiFiMqtt Resume 
+Task_Packdata_continue Stop , Task__CheckWiFiMqtt Resume (กลับมาทำงานอีกที) สาเหตุเพราะ task นี้จะพยายามต่อ wifi และ mqtt จะรบกวนการทำงานของ 
+Task_Packdata_continue (เพราะสภาวะนี้ไม่ต้องต่อ net ในการ packdata ช่วงเวลา write SDcard) เพราะเมื่อ ต่อ net จะอ่านข้อมูลใน ram ไปส่ง 
 
 ***ใน version ต่อไปกำลังทดสอบ Task Write Ram เมื่อ Clear Ram แล้ว หลังจาก Write SDcard เสร็จ 
 หลัง การทำงานนี้ 
