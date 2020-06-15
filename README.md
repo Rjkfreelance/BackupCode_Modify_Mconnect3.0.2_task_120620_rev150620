@@ -5,6 +5,7 @@ Version นี้ ตรวจสอบการทำงาน packdata  ใน
 ### การส่งข้อมูล Realtime ปรกติ ที่ 10 sec โดยถ้า Database Server เปิดการทำงาน จะได้รับ OK ตอบกลับ 
 ### ถ้าไม่เปิด Database Server ก็จะไม่ได้รับ OK packdata ใน ram ต่อ แต่ส่งไปยัง Cloudmqtt ทุกๆ 10 sec
 ### เหมือนเดิม 
+### ส่วนอัตรการ Packdata Write data to Ram คงเดิม 1-2 sec  ไม่หน่วงเวลาตามการส่ง 
 
 #### การทดสอบ คือทำงานได้ โดยไม่ Reset  
 เมื่อ Run firmware  task_CheckWiFiMqtt  start ,task_Packdata_continue start 
