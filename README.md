@@ -26,3 +26,7 @@ mac.writeAddress(writeaddr_eeprom2, 0);
 write_addeeprom = 0;
 
 ### หมายเหตุ กำลัง ทดลองทำ Task Manage  คือควบคุม Tasks อื่นๆ ตาม ลักษณะงาน ที่ต้องเรียก task ไหน มาทำ task ไหน ต้องหยุดชั่วคราว ,start,stop ,resume ต่อไป  
+
+![img](https://iotfmx.com/imgtest/TestMcon150620/test1.png)
+![img](https://iotfmx.com/imgtest/TestMcon150620/test2.png)
+
