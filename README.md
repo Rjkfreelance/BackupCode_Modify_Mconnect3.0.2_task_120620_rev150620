@@ -2,6 +2,9 @@
 Modify Task Packdata_continue between Write SDcard  15/06/2020
 Version นี้ ตรวจสอบการทำงาน packdata  ในขณะ ที่ Write SDcard จาก FRAM เนื่องจาก FRAM เต็ม 32KB แล้ว 
 แต่ข้อมูลที่ Pack ยังไม่ได้เขียน ลง RAM ต่อ 
+### การส่งข้อมูล Realtime ปรกติ ที่ 10 sec โดยถ้า Database Server เปิดการทำงาน จะได้รับ OK ตอบกลับ 
+### ถ้าไม่เปิด Database Server ก็จะไม่ได้รับ OK packdata ใน ram ต่อ แต่ส่งไปยัง Cloudmqtt ทุกๆ 10 sec
+### เหมือนเดิม 
 
 #### การทดสอบ คือทำงานได้ โดยไม่ Reset  
 เมื่อ Run firmware  task_CheckWiFiMqtt  start ,task_Packdata_continue start 
