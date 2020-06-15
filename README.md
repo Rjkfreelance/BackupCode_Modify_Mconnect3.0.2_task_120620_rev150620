@@ -2,7 +2,8 @@
 Modify Task Packdata_continue between Write SDcard  15/06/2020
 Version นี้ ตรวจสอบการทำงาน packdata  ในขณะ ที่ Write SDcard จาก FRAM เนื่องจาก FRAM เต็ม 32KB แล้ว 
 แต่ข้อมูลที่ Pack ยังไม่ได้เขียน ลง RAM ต่อ 
-การทดสอบ คือทำงานได้ โดยไม่ Reset  
+
+#### การทดสอบ คือทำงานได้ โดยไม่ Reset  
 เมื่อ Run firmware  task_CheckWiFiMqtt  start ,task_Packdata_continue start 
 แต่ มี flag ที่ write_addeeprom >= 32000  
 xsdwrite = 1; เริ่มเขียน SDcard 
